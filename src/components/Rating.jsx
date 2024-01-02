@@ -64,6 +64,7 @@ function Rating() {
                   <FontAwesomeIcon
                     icon={faStar}
                     color="orange"
+                    className="hover:h-6"
                     onClick={() => setItems("⭐️⭐️ Stars")}
                   />
                 }
@@ -76,6 +77,7 @@ function Rating() {
                   <FontAwesomeIcon
                     icon={faStar}
                     color="yellow"
+                    className="hover:h-6"
                     onClick={() => setItems("⭐️🌟⭐️ Stars")}
                   />
                 }
@@ -88,7 +90,8 @@ function Rating() {
                   <FontAwesomeIcon
                     icon={faStar}
                     color="lightgreen"
-                    // className="fa-beat-fade"
+                    // className="fa-beat-fade"                     className="hover:h-6"
+
                     onClick={() => setItems("⭐️🌟🌟⭐️ Stars")}
                   />
                 }
