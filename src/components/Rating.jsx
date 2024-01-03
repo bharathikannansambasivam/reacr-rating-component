@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-
+import "../App.css";
 import thankYouGif from "../assets/cel.gif";
 function Rating() {
   const [items, setItems] = useState("0😕 star");
@@ -13,7 +13,7 @@ function Rating() {
   const Thankyou = ({ items }) => {
     return (
       <>
-        <div className="grid   h-screen items-center justify-center bg-slate-400">
+        <div className="grid   h-screen items-center justify-center bg-violet-200">
           <div className="absolute ">
             <img
               className="w-screen h-screen"
@@ -23,10 +23,10 @@ function Rating() {
           </div>
           {}
           <div>
-            <p className="text-2xl">ThankYou for giving {items}</p>
+            <p className="text-4xl mb-9 ">ThankYou for giving {items}</p>
             <div className=" flex justify-center">
               <button
-                className=" relative  center bg-gradient-to-r from-violet-300 to-violet-500 rounded-md px-3 "
+                className=" absolute bg-gradient-to-r from-violet-300 to-violet-500 rounded-md px-3 h-12 w-32 text-xl font-medium  "
                 onClick={() => setSubmitted(false)}
               >
                 Rate Again
@@ -51,8 +51,8 @@ function Rating() {
                   <FontAwesomeIcon
                     icon={faStar}
                     color="red"
-                    className="hover:h-6"
-                    onClick={() => setItems("⭐️ Star")}
+                    className=" h-9 hover:h-12"
+                    onClick={() => setItems("⭐️ Star da")}
                   />
                 }
               />
@@ -64,7 +64,7 @@ function Rating() {
                   <FontAwesomeIcon
                     icon={faStar}
                     color="orange"
-                    className="hover:h-6"
+                    className="h-9 hover:h-12"
                     onClick={() => setItems("⭐️⭐️ Stars")}
                   />
                 }
@@ -77,7 +77,7 @@ function Rating() {
                   <FontAwesomeIcon
                     icon={faStar}
                     color="yellow"
-                    className="hover:h-6"
+                    className=" h-9 hover:h-12"
                     onClick={() => setItems("⭐️🌟⭐️ Stars")}
                   />
                 }
@@ -89,7 +89,8 @@ function Rating() {
                 number={
                   <FontAwesomeIcon
                     icon={faStar}
-                    color="lightgreen"
+                    color="lightgreen "
+                    className=" h-9 hover:h-12"
                     // className="fa-beat-fade"                     className="hover:h-6"
 
                     onClick={() => setItems("⭐️🌟🌟⭐️ Stars")}
@@ -102,7 +103,7 @@ function Rating() {
                 number={
                   <FontAwesomeIcon
                     icon={faStar}
-                    className="fa-beat"
+                    className="fa-beat h-9 hover:h-12"
                     color="green"
                     onClick={() => setItems("🌟🌟🌟🌟🌟 Stars")}
                   />
@@ -111,7 +112,7 @@ function Rating() {
             </li>
           </ul>
           <button
-            className=" bg-gradient-to-r from-violet-300 to-violet-500 rounded-md px-3 "
+            className=" bg-gradient-to-r from-violet-300 to-violet-500 rounded-md px-3 h-12 w-32 text-xl font-medium  "
             onClick={() => setSubmitted(true)}
           >
             Submit
