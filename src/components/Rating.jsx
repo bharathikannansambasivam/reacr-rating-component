@@ -3,39 +3,13 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "../App.css";
-import thankYouGif from "../assets/cel.gif";
+import Thankyou from "./Thankyou";
+
 function Rating() {
   const [items, setItems] = useState("0😕 star");
   const [submited, setSubmitted] = useState(false);
   const Button = ({ number }) => {
     return <button>{number}</button>;
-  };
-  const Thankyou = ({ items }) => {
-    return (
-      <>
-        <div className="grid   h-screen items-center justify-center bg-violet-200">
-          <div className="absolute ">
-            <img
-              className="w-screen h-screen"
-              src={thankYouGif}
-              alt="Thank you GIF"
-            />
-          </div>
-          {}
-          <div>
-            <p className="text-4xl mb-9 ">ThankYou for giving {items}</p>
-            <div className=" flex justify-center">
-              <button
-                className=" absolute bg-gradient-to-r from-violet-300 to-violet-500 rounded-md px-3 h-12 w-32 text-xl font-medium  "
-                onClick={() => setSubmitted(false)}
-              >
-                Rate Again
-              </button>
-            </div>{" "}
-          </div>
-        </div>
-      </>
-    );
   };
   return (
     <div>
@@ -51,8 +25,8 @@ function Rating() {
                   <FontAwesomeIcon
                     icon={faStar}
                     color="red"
-                    className=" h-9 hover:h-12"
-                    onClick={() => setItems("⭐️ Star da")}
+                    className=" h-9 hover:h-12  "
+                    onClick={() => setItems("⭐️ Star")}
                   />
                 }
               />
@@ -120,7 +94,9 @@ function Rating() {
         </div>
       )}
 
-      {submited == true && <Thankyou items={items} />}
+      {submited == true && (
+        <Thankyou items={items} onRateAgain={() => setSubmitted(false)} />
+      )}
     </div>
   );
 }
